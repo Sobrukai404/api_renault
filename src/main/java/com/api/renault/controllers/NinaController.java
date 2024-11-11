@@ -69,6 +69,7 @@ public class NinaController {
 
             return ErrorResponse.error400("Não foi possivel encontrar o chat");
         } catch (Exception e) {
+            System.out.println(e);
             return ErrorResponse.error500(e);
         }
     }

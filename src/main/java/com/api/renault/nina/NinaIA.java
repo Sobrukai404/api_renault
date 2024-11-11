@@ -10,20 +10,15 @@ public class NinaIA {
 
         String pythonScriptPath = "ia_chat/chat.py";
         String[] command = {"python", pythonScriptPath, "-q", query};
-
         ProcessBuilder processBuilder = new ProcessBuilder(command);
 
         try {
 
             Process process = processBuilder.start();
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-            String line;
 
-            if ((line = reader.readLine()) != null) {
-                return line;
-            }
+            return reader.readLine();
 
-            return "{'erro':'erro ao gerar mensagem'}";
         } catch (IOException e) {
             throw e;
         }

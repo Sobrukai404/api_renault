@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import nltk
-# nltk.download('punkt')
+# nltk.download('punkt_tab')
 import numpy as np
 from nltk.stem.porter import PorterStemmer
 stemmer = PorterStemmer()
@@ -13,7 +13,7 @@ def stem(word):
 
 def bag_of_words(tokenized_sentence, all_words):
     tokenized_sentence = [stem(w) for w in tokenized_sentence]
-    
+
     bag = np.zeros(len(all_words), dtype=np.float32)
     # print(bag)
     for idx, w in enumerate(all_words):
