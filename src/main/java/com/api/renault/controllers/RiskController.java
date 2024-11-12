@@ -34,22 +34,4 @@ public class RiskController {
             return ErrorResponse.error500(e);
         }
     }
-
-
-//    @GetMapping("/dashboard/counter")
-//    public ResponseEntity<Integer> getTotalRisks() {
-//        return SuccessResponse.success200(Math.toIntExact(riskRepository.count()));
-//    }
-//
-//    @GetMapping("/dashboard/resolved")
-//    public ResponseEntity<Integer> getResolvedRisks() {
-//        Integer resolvedRisks = Math.toIntExact(riskRepository.countByStatus("Concluído"));
-//        return SuccessResponse.success200(resolvedRisks);
-//    }
-//
-//    @GetMapping("/dashboard/trajectory")
-//    public ResponseEntity<List<RiskModel>> getTrajectory() {
-//        List<RiskModel> trajectory = riskRepository.findByStatusOrderByResolutionDateAsc("Em progresso");
-//        return SuccessResponse.success200(trajectory);
-//    }
 }
