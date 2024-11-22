@@ -1,5 +1,6 @@
 package com.api.renault.models;
 
+import com.api.renault.listeners.RiskModelListener;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
@@ -7,6 +8,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "tbl_risk")
+@EntityListeners(RiskModelListener.class)
 public class RiskModel {
 
     @Id
@@ -101,7 +103,15 @@ public class RiskModel {
     @JsonProperty("capitalization")
     private boolean capitalization;
 
+    @JsonProperty("username")
+    private String creatorUsername;
 
+    public String getCreatorUsername() {
+        return creatorUsername;
+    }
+    public void setCreatorUsername (String creatorUsername) {
+        this.creatorUsername = creatorUsername;
+    }
     public Integer getIdRisk() {
         return idRisk;
     }
